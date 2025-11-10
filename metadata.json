@@ -1,0 +1,5 @@
+{
+  "name": "Netflix 2.0",
+  "description": "An intelligent recommendation engine and analytics dashboard for Netflix content, powered by Gemini AI.",
+  "requestFramePermissions": []
+}
