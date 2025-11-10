@@ -1,15 +1,11 @@
 import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { Recommendation, SentimentAnalysisResult, ChatMessage } from '../types';
 
-const apiKey = process.env.API_KEY;
-
 // Ensure API key is available before making calls
 const getAiClient = () => {
-  if (!apiKey) {
-    console.error("API_KEY is missing!");
-    throw new Error("API Key not found.");
-  }
-  return new GoogleGenAI({ apiKey });
+  // Guidelines requirement: Use process.env.API_KEY string directly.
+  // Assume it is pre-configured.
+  return new GoogleGenAI({ apiKey: process.env.API_KEY });
 };
 
 export const getRecommendations = async (query: string, excludeTitles: string[] = []): Promise<Recommendation[]> => {
